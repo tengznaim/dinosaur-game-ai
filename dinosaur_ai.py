@@ -32,12 +32,11 @@ while True:
     normalized = grayscale / 255
     resized = cv.resize(normalized, (60, 40), interpolation=cv.INTER_AREA)
 
-    predicted_move = np.argmax(model.predict(np.array([np.ravel(resized)])))
-    key = labels[predicted_move]
+    probabilities = model.predict(np.array([np.ravel(resized)]))
+    key = labels[np.argmax(probabilities)]
 
-    print(key)
+    print(key, np.max(probabilities))
 
     if key == "up" or key == "down":
         keyboard.press(key)
-        time.sleep(0.01)
         keyboard.release(key)

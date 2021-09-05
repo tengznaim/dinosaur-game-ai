@@ -52,8 +52,6 @@ while True:
         image.save(os.path.join(right_folder, image_name))
         right_count += 1
 
-    # Modifiable, used to prevent taking too many screenshots before the screen has changed.
-    time.sleep(0.1)
 
 print("----------Training Data Summary----------")
 print("Up Images:", up_count)

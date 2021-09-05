@@ -1,6 +1,14 @@
 # Chrome Dinosaur Game AI with Neural Networks
 
-chrome://dino/
+This is a densely connected artificial neural network trained to play the famous <a href="chrome://dino">Chrome dinosaur game</a>. I initially planned to implement this with a convolutional neural network, however, taking a step back to what I already knew, I was curious to see how well a regular ANN would work given such a task.
+
+## Network Architecture
+
+The NN is a 3 layer densely connected neural network.
+
+- The input layer has 2400 units corresponding to a 60x40 image of the processed screenshot passed into the network.
+- The hidden layer has 100 units (at this point it was just a random choice)
+- The output layer has 3 units corrensponding to the possible game moves to make: up, down or right.
 
 ## Gathering Your Own Training Data
 
@@ -11,6 +19,11 @@ If you'd like to run the `get_training_data.py` script and create your own train
 3. Press space when you're ready to start the game.
 4. Play the game (try to press keys only when necessary to obtain more accurate screenshots since it's dependent on your action)
 5. Once the game is over, press escape to stop the script (you may need to manually remove excess images that are of the game over screen)
+
+## Limitations
+
+1. Running the game, either for obtaining training data or actually using the AI is only possible on the main display (eg. the laptop screen instead of an external display)
+2. My browser is in dark mode and that's how the game starts off. I don't currently know if it works well during the day time mode of the game.
 
 ## References
 
