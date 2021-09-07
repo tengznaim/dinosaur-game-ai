@@ -1,6 +1,6 @@
 # Chrome Dinosaur Game AI with Neural Networks
 
-This is a densely connected artificial neural network trained to play the famous <a href="chrome://dino">Chrome dinosaur game</a>. I initially planned to implement this with a convolutional neural network, however, taking a step back to what I already knew, I was curious to see how well a regular ANN would work given such a task.
+This is a densely connected artificial neural network trained to play the famous [Chrome dinosaur game](chrome://dino). I initially planned to implement this with a convolutional neural network, however, taking a step back to what I already knew, I was curious to see how well a regular ANN would work given such a task.
 
 ## Network Architecture
 

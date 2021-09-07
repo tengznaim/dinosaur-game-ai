@@ -6,6 +6,14 @@ import keyboard
 import time
 from PIL import ImageGrab
 
+parent_dir = os.getcwd()
+test_models_directory = os.path.join(parent_dir, "test_models")
+test_model_name = "INSERT_TEST_MODEL_NAME"
+test_model = os.path.join(test_models_directory, test_model_name)
+
+# "saved_model" refers to a model that I personally think is the best performing one so far.
+# However, there is also support to test other models so that the main model does not have to be overwritten until sure.
+# Change this directory to "test_model" for tester models.
 model = tf.keras.models.load_model("saved_model")
 labels = ["up", "down", "right"]
 

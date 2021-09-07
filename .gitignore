@@ -3,3 +3,4 @@ concept_tests.py
 
 # Folders
 /training_data*
+/test_models
