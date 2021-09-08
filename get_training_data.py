@@ -35,19 +35,22 @@ while True:
         break
 
     elif keyboard.is_pressed("up") and up_count < 1000:
-        image = ImageGrab.grab(bbox=(220, 350, 820, 750))
+        # image = ImageGrab.grab(bbox=(220, 350, 820, 750))
+        image = ImageGrab.grab(bbox=(220, 350, 620, 750))
         image_name = f"up({up_count}).png"
         image.save(os.path.join(up_folder, image_name))
         up_count += 1
 
     elif keyboard.is_pressed("down") and down_count < 1000:
-        image = ImageGrab.grab(bbox=(220, 350, 820, 750))
+        # image = ImageGrab.grab(bbox=(220, 350, 820, 750))
+        image = ImageGrab.grab(bbox=(220, 350, 620, 750))
         image_name = f"down({down_count}).png"
         image.save(os.path.join(down_folder, image_name))
         down_count += 1
 
     elif right_count < 1000:
-        image = ImageGrab.grab(bbox=(220, 350, 820, 750))
+        # image = ImageGrab.grab(bbox=(220, 350, 820, 750))
+        image = ImageGrab.grab(bbox=(220, 350, 620, 750))
         image_name = f"right({right_count}).png"
         image.save(os.path.join(right_folder, image_name))
         right_count += 1

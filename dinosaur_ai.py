@@ -8,7 +8,7 @@ from PIL import ImageGrab
 
 parent_dir = os.getcwd()
 test_models_directory = os.path.join(parent_dir, "test_models")
-test_model_name = "INSERT_TEST_MODEL_NAME"
+test_model_name = "smaller_more_data"
 test_model = os.path.join(test_models_directory, test_model_name)
 
 # "saved_model" refers to a model that I personally think is the best performing one so far.
@@ -33,12 +33,14 @@ while True:
     if keyboard.is_pressed("esc"):
         break
 
-    image = ImageGrab.grab(bbox=(220, 350, 820, 750))
+    # image = ImageGrab.grab(bbox=(220, 350, 820, 750))
+    image = ImageGrab.grab(bbox=(220, 350, 620, 750))
     cv_image = cv.cvtColor(np.array(image), cv.COLOR_RGB2BGR)
     grayscale = cv.cvtColor(cv_image, cv.COLOR_BGR2GRAY)
 
     normalized = grayscale / 255
-    resized = cv.resize(normalized, (60, 40), interpolation=cv.INTER_AREA)
+    # resized = cv.resize(normalized, (60, 40), interpolation=cv.INTER_AREA)
+    resized = cv.resize(normalized, (40, 40), interpolation=cv.INTER_AREA)
 
     probabilities = model.predict(np.array([np.ravel(resized)]))
     key = labels[np.argmax(probabilities)]
