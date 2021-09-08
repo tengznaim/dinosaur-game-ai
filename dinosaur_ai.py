@@ -8,12 +8,12 @@ from PIL import ImageGrab
 
 parent_dir = os.getcwd()
 test_models_directory = os.path.join(parent_dir, "test_models")
-test_model_name = "smaller_more_data"
+test_model_name = "INSERT MODEL NAME"
 test_model = os.path.join(test_models_directory, test_model_name)
 
 # "saved_model" refers to a model that I personally think is the best performing one so far.
 # However, there is also support to test other models so that the main model does not have to be overwritten until sure.
-# Change this directory to "test_model" for tester models.
+# Change the model name above and change the directory below to test_model.
 model = tf.keras.models.load_model("saved_model")
 labels = ["up", "down", "right"]
 
@@ -47,6 +47,12 @@ while True:
 
     print(key, np.max(probabilities))
 
-    if key == "up" or key == "down":
+    if key == "up":
         keyboard.press(key)
+        time.sleep(0.1)
+        keyboard.release(key)
+
+    elif key == "down":
+        keyboard.press(key)
+        time.sleep(0.4)
         keyboard.release(key)

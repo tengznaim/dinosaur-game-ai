@@ -13,7 +13,7 @@ The NN is a 3 layer densely connected neural network.
 - The input layer has 1600 units corresponding to a 40x40 image of the processed screenshot passed into the network.
 - The hidden layer has 1000 units.
   - There is a rule of thumb that states using 2/3 of the number of input neurons + output neurons.
-  - The number I choose is loosely based on that by rounding down 2/3 \* 1600 (1066 -> 1000) and omitting the number of output neurons.
+  - The number I chose is loosely based on that by rounding down 2/3 \* 1600 (1066 -> 1000) and omitting the number of output neurons.
 - The output layer has 3 units corrensponding to the possible game moves to make: up, down or right.
 
 ## Limitations
